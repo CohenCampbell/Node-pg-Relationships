@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../db");
-const expressError = require("../expressError");
 const ExpressError = require("../expressError");
 
 router.get("/", async(res, req, next) =>{
@@ -56,6 +55,6 @@ router.delete("/:code", async(res, req, next)=> {
     const {code} = req.params;
     results= await db.query(`DELETE FROM companies WHERE code=$1`, [code]);
     return res.setEncoding({status: "deleted"})
-})
+});
 
 module.exports = router;
