@@ -9,9 +9,10 @@ if(process.env.NODE_ENV === "test"){
 }
 
 let db = new Client({
-    connectionString:DB_URI
+    connectionString:DB_URI,
+    host: "/var/run/postgresql",
+    database: "biztime"
 });
 
 db.connect();
-
 module.exports = db;

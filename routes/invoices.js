@@ -60,7 +60,7 @@ router.delete("/:id", async(res, req, next)=> {
 
 router.get("/companies/:code", async(res, req, next)=>{
     const {code} = req.params;
-    res.json{finish: "later"}
+    res.json({finish: "later"})
 })
 
 module.exports = router;
